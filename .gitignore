@@ -1,0 +1,61 @@
+# Ignore build outputs
+bin/
+obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+
+# Rider files
+.idea/
+*.sln.iml
+
+# VS Code files
+.vscode/
+
+# DotNet CLI files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# .NET Core
+*.db
+*.ds_store
+*.pdb
+*.exe
+*.dll
+*.app
+*.so
+*.dylib
+*.log
+*.vspscc
+*.vssscc
+.vscode/
+
+# Resharper files
+_ReSharper.Caches/
+
+# Uncomment if using Rider
+.idea/
+
+# Local history files
+.history/
+
+# Auto-generated files by Visual Studio
+.vs/
+
+# Dependency manager files
+*.nupkg
+*.snupkg
+*.nuget/
+
+# Publish folder
+publish/
+out/
+
+# Logs
+*.log
+
+# Git ignore for user secrets and configuration
+secrets.json
