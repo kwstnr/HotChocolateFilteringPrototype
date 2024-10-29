@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Prototype.data;
+using Prototype.DataLoaders;
 using Prototype.model;
 
 namespace Prototype.Types.Nodes;
@@ -12,7 +13,7 @@ public static partial class BookNode
         descriptor.Ignore(b => b.AuthorId);
     }
 
-    public static async Task<Author?> GetAuthorAsync([Parent] Book book, [Service] PrototypeDbContext context,
-        CancellationToken cancellationToken) =>
-        await context.Authors.FirstOrDefaultAsync(a => a.Id == book.AuthorId, cancellationToken);
+    public static async Task<Author?> GetAuthorAsync([Parent] Book book,
+        [Service] IAuthorByBookIdDataLoader authorByBookIdDataLoader, CancellationToken cancellationToken) =>
+        await authorByBookIdDataLoader.LoadAsync(book.Id, cancellationToken);
 }
